@@ -1,0 +1,240 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-left: 1.5rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 1.5rem;
+  }
+
+  &__viewAll {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    .icon {
+      width: 0.8em; // Relative to font size
+      height: 0.8em;
+      min-width: 12px;
+      min-height: 12px;
+      transition: transform 0.2s ease;
+      color: #c8c8c8;
+    }
+
+    .text {
+      font-size: 0.65em; // Relative to parent font size
+      font-weight: 100;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+      color: #c8c8c8;
+    }
+
+    &:hover {
+      .icon, .text {
+        color: white;
+      }
+    }
+  }
+
+  &-header {
+    font-family: "Rubik";
+    font-size: clamp(16px, 2vw, 24px); // Min 16px, preferred 2vw, max 24px
+    font-weight: 100;
+    margin: 0; // Reset margin
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-padding-left: 1.5rem;
+    padding-left: 1.5rem;
+    margin-left: -1.5rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .category {
+    &-header {
+      font-size: clamp(16px, 2.2vw, 22px);
+    }
+    
+    &__viewAll {
+      .icon{
+        width: 15px;
+        height: 15px;
+      }
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .category {
+    &-header {
+      font-size: clamp(15px, 2.5vw, 20px);
+    }
+    
+    &__viewAll {
+      gap: 0.4rem;
+      
+      .icon {
+        min-width: 11px;
+        min-height: 11px;
+      }
+      
+      .text {
+        // font-size: 0.65em;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .category {
+    &-header {
+      font-size: clamp(14px, 3vw, 18px);
+    }
+    
+    &__viewAll {
+      .icon {
+        min-width: 10px;
+        min-height: 10px;
+      }
+      
+      .text {
+        font-size: 0.6em;
+      }
+    }
+  }
+}
+// .category {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+//   width: 100%;
+//   padding-left: 1.5rem;
+
+//   &__header {
+//     display: flex;
+//     align-items: baseline;
+//     gap: 8px;
+//     padding-right: 1.5rem;
+//   }
+
+//     &__viewAll {
+//     display: flex;
+//     align-items: center;
+//     gap: 0.5rem;
+//     cursor: pointer;
+//     transition: all 0.2s ease;
+//     padding: 4px 8px;
+//     border-radius: 4px;
+
+//     &:hover {
+//       text-decoration: underline;
+//       color: white;
+//     }
+
+//     .icon {
+//       width: calc(12px + 0.3vw);
+//       height: calc(12px + 0.3vw);
+//       min-width: 12px;
+//       min-height: 12px;
+//       transition: transform 0.2s ease;
+//       color:#c8c8c8
+//     }
+
+//     .text {
+//       font-size: calc(10px + 0.5vw);
+//       font-weight: 100;
+//       white-space: nowrap;
+//       transition: color 0.2s ease;
+//       color:#c8c8c8;
+//       &:hover {
+//         color: white;
+//       }
+//     }
+
+//     &:hover .icon {
+//       color: white;
+//     }
+//   }
+
+//   &__cards {
+//     display: flex;
+//     gap: 1rem;
+//     overflow-x: auto;
+//     padding-bottom: 1rem;
+//     scrollbar-width: none;
+//     -ms-overflow-style: none;
+//     scroll-padding-left: 1.5rem;
+//     padding-left: 1.5rem;
+//     margin-left: -1.5rem;
+
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+//   }
+
+//   // Header styles (now scoped to component)
+//   &-header {
+//     font-family: "Rubik";
+//     font-size: 2vw;
+//     font-weight: 100;
+//     margin-bottom: 1.2vw;
+//     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+//     line-height: 1.1;
+//     white-space: nowrap;
+//   }
+// }
+
+// /* Responsive Adjustments */
+// @media (max-width: 1024px) {
+ 
+// }
+
+// @media (max-width: 768px) {
+//  .category{
+//   &-header{
+//       font-size: 2vw;
+//   }
+//  }
+// }
+
+// @media (max-width: 480px) {
+//  .category{
+//   &-header{
+//       font-size: 2vw;
+//   }
+//  }
+// }
+
+// @media (max-width: 375px) {
+//  .category{
+//   &-header{
+//       font-size: 2vw;
+//   }
+//  }
+// }

@@ -1,0 +1,18 @@
+   .top-bar-container{
+       font-family: Rubik, "sans-serif";
+    position: relative;
+    display: inline-flex
+;
+    min-width: var(--err-top-menu-width);
+    width: var(--err-top-menu-width);
+    max-width: var(--err-top-menu-width);
+    height: var(--err-top-menu-height);
+    top: 0;
+    padding: 0 var(--err-top-menu-left-right-padding);
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: var(--err-top-menu-main-header);
+    z-index: 1;
+   } 
