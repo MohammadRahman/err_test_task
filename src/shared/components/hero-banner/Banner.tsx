@@ -1,9 +1,19 @@
 import { FaCirclePlay } from "react-icons/fa6";
 import "./banner.styles.scss";
 
-const Banner = ({ content, index }) => {
+interface BannerProps {
+  content: {
+    id: number;
+    heading: string;
+    lead?: string;
+    photos?: { photoUrlBase: string }[];
+  }[][];
+  index: number | null; 
+}
 
-const bannerContent = content[index] || [];
+const Banner = ({ content, index }: BannerProps) => {
+
+const bannerContent = index !== null ? content[index] || [] : content.flat();
   return (
     <div className="banner">
       {bannerContent.map((item) => {
