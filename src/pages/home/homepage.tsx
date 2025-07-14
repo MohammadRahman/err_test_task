@@ -21,7 +21,6 @@ interface TransformedData {
 
 const Homepage = () => {
   const { err_data } = useGetData();
-
   let bannerIndex = 0;
 
   function transformData(data: DataItem[]): TransformedData {
