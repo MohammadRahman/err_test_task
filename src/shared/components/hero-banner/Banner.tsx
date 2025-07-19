@@ -12,10 +12,7 @@ interface BannerProps {
 }
 
 const Banner = ({ content, index }: BannerProps) => {
-
-  console.log("data in Banner", content);
 const bannerContent = index !== null ? content[index] || [] : content.flat();
-console.log("bannerContent", bannerContent);
   return (
     <div className="banner">
       {bannerContent.map((item) => {
@@ -30,29 +27,11 @@ console.log("bannerContent", bannerContent);
             <div
             className="banner-content"
             >
-              <div
-                style={{
-                  cursor: "pointer",
-                  display: "flex",
-                  gap: "8px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#203443",
-                  color: "#ffffff",
-                  width: "95px",
-                  height: "45px",
-                  borderRadius: "5px",
-                  transition: "all 0.2s ease",
-                  border: "none",
-                  fontSize: "14px",
-                  fontWeight: "500",
-                  marginBottom: "1rem",
-                }}
-              >
-                <FaCirclePlay /> <span> Vaata</span>
+              <div className="watch-button">
+                <FaCirclePlay /> <span>Vaata</span>
               </div>
-              <h1 className="banner-title">{item.heading}</h1>
-              <p className="banner-lead-text">{ item?.lead?.replace(/<\/?p>/g, '')}</p>
+              <h2 className="banner-title">{item.heading}</h2>
+                <p className="banner-lead-text">{ item?.lead?.replace(/<\/?p>/g, '')}</p>
             </div>
           </div>
         );

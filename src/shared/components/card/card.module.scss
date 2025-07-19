@@ -48,6 +48,8 @@
       z-index: 2;
       background: white;
       border: none;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       color: black;
       cursor: pointer;
@@ -56,14 +58,6 @@
       justify-content: center;
       transition: transform 0.2s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-      &:hover {
-        transform: translateY(-50%) scale(1.05);
-      }
-
-      &:active {
-        transform: translateY(-50%) scale(0.95);
-      }
     }
 
     &--left {
@@ -73,21 +67,22 @@
     }
 
     &--right {
-      right: 0;
-      width: 40px;
-      height: 40px;
+      right: 10;
+      width: 30px;
+      height: 30px;
     }
   }
 
   &__carousel {
     display: flex;
-    gap: 16px;
+    // gap: 16px;
+    gap: 8px;
     overflow-x: auto;
     scroll-behavior: smooth;
     height: 100%;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-bottom: 1px;
+    // padding-bottom: 1px;
     scroll-padding: 0 50px;
 
     &::-webkit-scrollbar {
@@ -96,7 +91,9 @@
   }
 
   &__item {
-    width: 190px;
+    // width: 200px;
+    width: calc((100vw - 60px - 24px - (6 * 8px)) / 6);
+    min-width: 140px; //fallback minimum
     height: 100%;
     border-radius: 4px;
     position: relative;

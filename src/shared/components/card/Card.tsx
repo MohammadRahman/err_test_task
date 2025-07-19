@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { TbLibraryPlus } from "react-icons/tb";
 import { TiChevronLeft, TiChevronRight } from "react-icons/ti";
 import styles from "./card.module.scss";
 
@@ -17,6 +16,7 @@ const Card = ({ items }: CardProps) => {
   const [showToolTip, setShowToolTip] = useState(false);
   const [showIcon, setShowIcon] = useState(true); // Initialize as true
   const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true); 
   const carouselRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -25,8 +25,10 @@ const Card = ({ items }: CardProps) => {
 
   const checkScrollPosition = () => {
     if (carouselRef.current) {
-      const { scrollLeft } = carouselRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setShowLeftArrow(scrollLeft > 0);
+
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
     }
   };
 
@@ -107,18 +109,17 @@ const Card = ({ items }: CardProps) => {
             {hoveredCardId === el.id && (
               <div className={styles.card__hoverIcon}>
                 {showIcon && (
-                  <div
-                    ref={iconRef}
-                  >
-                    <TbLibraryPlus
-                      size={25}
-                      onMouseOver={handleHoverIcon}
-                      onMouseLeave={() => {
+                  <div ref={iconRef}>
+                    <span className="material-symbols-outlined"
+                    onMouseOver={handleHoverIcon}
+                     onMouseLeave={() => {
                         if (!textRef.current?.matches(":hover")) {
                           setShowToolTip(false);
                         }
                       }}
-                    />
+                    >
+                      library_add
+                    </span>
                   </div>
                 )}
 
@@ -128,20 +129,8 @@ const Card = ({ items }: CardProps) => {
                     onMouseEnter={handleTooltipMouseEnter}
                     onMouseLeave={handleTooltipMouseLeave}
                     className={styles.card__tooltip}
-                    // style={{
-                    //   width: "fit-content",
-                    //   height: "30px",
-                    //   background: "black",
-                    //   border: "1px solid white",
-                    //   borderRadius: "4px",
-                    //   opacity: "0.7",
-                    //   padding: "5px",
-                    //   marginTop: "-1px",
-                    // }}
                   >
-                    <p className={styles.card__tooltipText}>
-                      Lisa lemmikuesse
-                    </p>
+                    <p className={styles.card__tooltipText}>Lisa lemmikuesse</p>
                   </div>
                 )}
               </div>
@@ -151,7 +140,8 @@ const Card = ({ items }: CardProps) => {
       </div>
 
       {/* Right Navigation Button */}
-      <div
+      {showRightArrow && (
+          <div
         onClick={scrollRight}
         className={`${styles.card__navButtonContainer} ${styles["card__navButtonContainer--right"]}`}
       >
@@ -159,6 +149,8 @@ const Card = ({ items }: CardProps) => {
           <TiChevronRight size={24} />
         </button>
       </div>
+      )}
+    
     </div>
   );
 };

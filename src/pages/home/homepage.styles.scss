@@ -3,9 +3,40 @@
   flex-direction: column;
   gap: 1rem;
 
-
-
   @media (max-width: 480px) {
     gap: 0.75rem;
   }
 }
+
+.homepage-section {
+  transition: background 0.3s ease;
+  &.active-gradient {
+    background: linear-gradient(
+      90deg, 
+      #223b50 0%, 
+      
+      #447596 50%, 
+       
+      #203443 100%
+    );
+    // #223b50 10%, 
+      // #223b50 20%, 
+      // #203443 70%,
+    // Optional: Add visual emphasis
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    // border-radius: 4px;
+  }
+}
+
+
+// .homepage-container {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1rem;
+
+
+
+//   @media (max-width: 480px) {
+//     gap: 0.75rem;
+//   }
+// }
