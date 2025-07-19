@@ -21,6 +21,7 @@ interface TransformedData {
 
 const Homepage = () => {
   const { err_data } = useGetData();
+  console.log("raw_data", err_data);
   let bannerIndex = 0;
 
   function transformData(data: DataItem[]): TransformedData {
@@ -35,11 +36,12 @@ const Homepage = () => {
       }
       transformedData[item.header].push(item.data);
     });
+    
     return transformedData;
   }
 
   const shapedData = transformData(err_data || []);
-
+console.log("transformedData", shapedData);
 const originalData = err_data|| [];
   return (
      <div>

@@ -13,12 +13,13 @@ interface BannerProps {
 
 const Banner = ({ content, index }: BannerProps) => {
 
+  console.log("data in Banner", content);
 const bannerContent = index !== null ? content[index] || [] : content.flat();
+console.log("bannerContent", bannerContent);
   return (
     <div className="banner">
       {bannerContent.map((item) => {
         const url = item?.photos?.map((i) => i.photoUrlBase);
-        console.log(url);
         return (
           <div key={item.id} style={{ height: "100%", position: "relative" }}>
             <div className="banner-backdrop">
