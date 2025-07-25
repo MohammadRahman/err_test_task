@@ -25,11 +25,58 @@
 .category {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
   padding-left: 1.5rem;
 
+    // Medium desktop
+    @media (min-width: 1000px) and (max-width: 1289.99px) {
+      height: 430px;
+         &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+    // Medium desktop
+    @media (min-width: 1280px) and (max-width: 1309.99px) {
+      height: 350px;
+         &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+
+    // Tablet landscape
+    @media (min-width: 960px) and (max-width: 999.99px) {
+        height: 400px;
+         &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+
+    // Tablet portrait
+    @media (min-width: 600px) and (max-width: 767.99px) {
+      height: 475px;
+       &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+    @media (min-width: 768px) and (max-width: 959.99px) {
+      height: 400px;
+      
+      &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+
+    // Mobile
+    @media (min-width: 500) and (max-width: 599.99px){
+      height: 460px;
+       &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
+
   &__header {
+    height: auto;
     font-size: calc(20px + 0.00625 * (100vw - 320px));
     display: flex;
     align-items: center;
@@ -78,18 +125,17 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     line-height: 1.2;
     white-space: nowrap;
+    text-align: center;
   }
 
   &__cards {
     display: flex;
-    // gap: 1rem;
     gap: 5px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-padding-left: 1.5rem;
-    // padding-left: 1.5rem;
-    // margin-left: -1.5rem;
+    height: 100%;
 
     &::-webkit-scrollbar {
       display: none;
@@ -118,10 +164,7 @@
 
 @media (max-width: 768px) {
   .category {
-    &-header {
-      font-size: clamp(15px, 2.5vw, 20px);
-    }
-
+    padding: 0.5rem;
     &__viewAll {
       gap: 0.4rem;
 
@@ -133,25 +176,6 @@
       .text {
         // font-size: 0.65em;
         font-size: 14px;
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .category {
-    &-header {
-      font-size: clamp(14px, 3vw, 18px);
-    }
-
-    &__viewAll {
-      .icon {
-        min-width: 10px;
-        min-height: 10px;
-      }
-
-      .text {
-        font-size: 0.6em;
       }
     }
   }

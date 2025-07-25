@@ -23,6 +23,7 @@ const Card = ({ items }: CardProps) => {
   const itemsPerScroll = 7;
   const itemWidth = 190;
 
+
   const checkScrollPosition = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
@@ -111,6 +112,7 @@ const Card = ({ items }: CardProps) => {
                 {showIcon && (
                   <div ref={iconRef}>
                     <span className="material-symbols-outlined"
+                 
                     onMouseOver={handleHoverIcon}
                      onMouseLeave={() => {
                         if (!textRef.current?.matches(":hover")) {

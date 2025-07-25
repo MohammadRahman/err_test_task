@@ -7,7 +7,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Homepage/>
+        <Homepage/>
     </QueryClientProvider>
   )
 }

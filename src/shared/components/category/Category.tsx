@@ -12,7 +12,7 @@ interface CategoryProps {
 
 const Category = ({ item, header, headerUrl }: CategoryProps) => {
   return (
-    <div>
+    <>
       {header === "" ? (
         <Banner content={item[""]} index={null} />
       ) : (
@@ -31,7 +31,7 @@ const Category = ({ item, header, headerUrl }: CategoryProps) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
