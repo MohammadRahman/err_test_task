@@ -217,5 +217,8 @@
     &__item{
       width: calc((100vw - 60px - 12px - (2 * (0.3vw + 4px))) / 2);
     }
+     &__navButtonContainer {
+      display: none;
+    }
   }
 }
