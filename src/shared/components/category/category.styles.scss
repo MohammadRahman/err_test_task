@@ -43,6 +43,13 @@
         font-size: calc(20px + .00625 * (100vw - 320px));
       }
     }
+    // Medium Laptop
+    @media (min-width: 1310px) and (max-width: 1514.99px) {
+      height: 370px;
+         &-header{
+        font-size: calc(20px + .00625 * (100vw - 320px));
+      }
+    }
 
     // Tablet landscape
     @media (min-width: 960px) and (max-width: 999.99px) {
