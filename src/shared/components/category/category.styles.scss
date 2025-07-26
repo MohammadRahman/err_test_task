@@ -83,7 +83,7 @@
     }
     // Mobile
     @media (max-width: 460px){
-      height: 320px;
+      height: 330px;
        &-header{
         font-size: calc(20px + .00625 * (100vw - 320px));
       }
